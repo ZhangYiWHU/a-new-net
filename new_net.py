@@ -7,7 +7,7 @@ def dense_block(layers, filt1, filt2, input):
 	for i in range(layers):
 		x = keras.layers.BatchNormalization(axis=-1)(x)
 		x = keras.layers.Activation('relu')(x)
-		x = keras.layers.Conv2D(filters=filt1,, kernel_size=1, strides=1, padding='same', kernel_initializer='he_uniform',
+		x = keras.layers.Conv2D(filters=filt1, kernel_size=1, strides=1, padding='same', kernel_initializer='he_uniform',
 			kernel_regularizer=l2(0))(x)
 		x = keras.layers.BatchNormalization(axis=-1)(x)
 		x = keras.layers.Activation('relu')(x)
